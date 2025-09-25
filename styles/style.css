@@ -1,0 +1,11 @@
+body {
+  background: url("https://images.pexels.com/photos/16131575/pexels-photo-16131575.jpeg") no-repeat center;
+  background-size: cover;
+}
+
+.book {
+  background: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 0px 0px 40px;
+}
