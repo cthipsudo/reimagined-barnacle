@@ -119,29 +119,60 @@ const aColor = makeColor(0, 0, 255);
 // const color1 = new Color(45, 245, 80);
 // const color2 = new Color(0, 0, 0);
 
-// JS Class Constructor
+// JS Class Object
 
-class Color {
-  constructor(r, g, b, name) {
-    this.r = r;
-    this.b = b;
-    this.g = g;
+// class Color {
+//   constructor(r, g, b, name) {
+//     this.r = r;
+//     this.b = b;
+//     this.g = g;
+//     this.name = name;
+//   }
+//   innerRGB() {
+//     const { r, g, b } = this;
+//     return `${r}, ${g}, ${b}`;
+//   }
+//   rgb() {
+//     return `rgb(${this.innerRGB()})`;
+//   }
+//   hex() {
+//     const { r, g, b } = this;
+//     return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+//   }
+//   rgba(a = 1.0) {
+//     return `${this.innerRGB()}, ${a}`;
+//   }
+// }
+
+// const c1 = new Color(120, 250, 240, "boogie");
+
+class Pet {
+  constructor(name, age) {
+    console.log("In Pet Constructor");
     this.name = name;
+    this.age = age;
   }
-  innerRGB() {
-    const { r, g, b } = this;
-    return `${r}, ${g}, ${b}`;
-  }
-  rgb() {
-    return `rgb(${this.innerRGB()})`;
-  }
-  hex() {
-    const { r, g, b } = this;
-    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
-  }
-  rgba(a = 1.0) {
-    return `${this.innerRGB()}, ${a}`;
+  eat() {
+    return `${this.name} is eating!`;
   }
 }
 
-const c1 = new Color(120, 250, 240, "boogie");
+class Cat extends Pet {
+  constructor(name, age, livesLeft = 9) {
+    console.log("In Cat Constructor");
+    super(name, age);
+    this.livesLeft = livesLeft;
+  }
+  meow() {
+    return `Meow!`;
+  }
+}
+
+class Dog extends Pet {
+  woof() {
+    return `Woof!`;
+  }
+  eat() {
+    return `${this.name} eats his food like a dog...`;
+  }
+}
